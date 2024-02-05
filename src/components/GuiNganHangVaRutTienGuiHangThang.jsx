@@ -17,7 +17,7 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
     const totalCapitalAndInterestValue = parseFloat(totalCapitalAndInterest);
 
     if (!isNaN(initialCapitalValue) &&!isNaN(initialCapitalValueCap) && !isNaN(interestRateValue) && !isNaN(totalCapitalAndInterestValue)) {
-      const periods = ((initialCapitalValueCap*((1+interestRateValue)**totalCapitalAndInterestValue)-initialCapitalValue)*(interestRateValue/((((1+interestRateValue)**totalCapitalAndInterestValue))-1)))
+      const periods = initialCapitalValue*Math.pow((1+interestRateValue),totalCapitalAndInterestValue)-initialCapitalValueCap*(((Math.pow(1+interestRateValue,totalCapitalAndInterestValue))-1)/interestRateValue)
       setNumberOfPeriods(periods);
     } else {
       setNumberOfPeriods(null);
@@ -48,11 +48,11 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
 
   const calculateNumberOfPeriods2 = () => {
     const initialCapitalValue2 = parseFloat(initialCapital2);
-    const interestRateValue2 = parseFloat(interestRate2);
+    const interestRateValue2 = parseFloat(interestRate2)/100;
     const totalCapitalAndInterestValue2 = parseFloat(totalCapitalAndInterest2);
     const totalCapitalAndInterestValueX2 = parseFloat(totalCapitalAndInterestX2);
     if (!isNaN(initialCapitalValue2) &&!isNaN(totalCapitalAndInterestValueX2) && !isNaN(interestRateValue2) && !isNaN(totalCapitalAndInterestValue2)) {
-      const periods = initialCapitalValue2 * (((1 + interestRateValue2/100) ** totalCapitalAndInterestValue2) - totalCapitalAndInterestValueX2 * (((1 + interestRateValue2/100) ** totalCapitalAndInterestValue2 - 1) / interestRateValue2/100))
+      const periods = (initialCapitalValue2*Math.pow(1+interestRateValue2,totalCapitalAndInterestValue2)-totalCapitalAndInterestValueX2)*(interestRateValue2/(Math.pow(1+interestRateValue2,totalCapitalAndInterestValue2)-1))
       setNumberOfPeriods2(periods);
     } else {
       setNumberOfPeriods2(null);
@@ -119,11 +119,11 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số tiền cả vốn lẫn lãi</p>
+              <p>Nhập số vốn ban dầu</p>
               <input type="number" value={initialCapital} onChange={(e) => setInitialCapital(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền vốn</p>
+              <p>Nhập số tiền rút</p>
               <input type="number" value={initialCapitalCap} onChange={(e) => setInitialCapitalCap(e.target.value)} />
             </div>
             <div className="rowInput">
@@ -150,7 +150,7 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
         {/* ================= New Customers ================ */}
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>II. Tính tổng</h2>
+            <h2>II. Tính số tiền rút</h2>
             <a href="#" className="btn" onClick={clearInputs2}>
               Clear
             </a>
@@ -162,22 +162,22 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
               <input type="number" value={initialCapital2} onChange={(e) => setInitialCapital2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số % lãi suất</p>
+              <p>Nhập lãi suất</p>
               <input type="number" value={interestRate2} onChange={(e) => setInterestRate2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn( theo tháng)</p>
+              <p>Nhập số kỳ hạn</p>
               <input type="number" value={totalCapitalAndInterest2} onChange={(e) => setTotalCapitalAndInterest2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền khách rút ra hàng tháng</p>
+              <p>Nhập số tiền còn lại</p>
               <input type="number" value={totalCapitalAndInterestX2} onChange={(e) => setTotalCapitalAndInterestX2(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Tổng vốn và lãi là : </p>
+          <p>Số tiền rút là : </p>
             {numberOfPeriods2 !== null && (
               <p className="resultNumber">  {numberOfPeriods2.toFixed(2)}</p>
             )}
