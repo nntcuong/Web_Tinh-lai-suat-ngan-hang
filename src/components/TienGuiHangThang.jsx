@@ -105,7 +105,7 @@ const TienGuiHangThang =(props)=>{
       <div className="details">
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>I. Tính kỳ hạn</h2>
+            <h2>I. Tính tổng tiền cả vốn và lãi</h2>
             <a href="#" className="btn">
               Clear
             </a>
@@ -113,7 +113,7 @@ const TienGuiHangThang =(props)=>{
 
           <div>
             <div className="rowInput">
-              <p>Nhập số vốn ban đầu</p>
+              <p>Nhập số tiền gửi hàng tháng</p>
               <input type="number" value={initialCapital} onChange={(e) => setInitialCapital(e.target.value)} />
             </div>
             <div className="rowInput">
@@ -121,14 +121,14 @@ const TienGuiHangThang =(props)=>{
               <input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập tổng vốn và lãi</p>
+              <p>Nhập số kỳ hạn</p>
               <input type="number" value={totalCapitalAndInterest} onChange={(e) => setTotalCapitalAndInterest(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số kỳ hạn là : </p>
+          <p>Tổng tiền cả vốn và lãi là : </p>
             {numberOfPeriods !== null && (
               <p className="resultNumber">  {numberOfPeriods.toFixed(2)}</p>
             )}

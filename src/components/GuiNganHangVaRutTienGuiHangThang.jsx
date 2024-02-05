@@ -74,19 +74,44 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
     const initialCapitalValueX3 = parseFloat(initialCapitalX3);
     const initialCapitalValue3 = parseFloat(initialCapital3);
     const interestRateValue3 = parseFloat(interestRate3);
-    const totalCapitalAndInterestValue3 = parseInt(totalCapitalAndInterest3);
+    const totalCapitalAndInterestValue3 = parseInt(totalCapitalAndInterest3)/100;
 
     if (!isNaN(initialCapitalValueX3) &&!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
-      const q=initialCapitalValue3/(initialCapitalValue3-interestRateValue3*totalCapitalAndInterestValue3/100);
-      const p=1+totalCapitalAndInterestValue3/100;
-      const n =Math.log(q) / Math.log(p); 
+      const n=Math.log((initialCapitalValueX3*totalCapitalAndInterestValue3-initialCapitalValue3)/(interestRateValue3*totalCapitalAndInterestValue3-initialCapitalValue3))/Math.log(1+totalCapitalAndInterestValue3);
+    
       const roundedN = Math.round(n);
       setNumberOfPeriods3(roundedN);
     } else {
       setNumberOfPeriods3(null);
     }
   };
+  const [initialCapitalX4, setInitialCapitalX4] = useState('');
+const [initialCapital4, setInitialCapital4] = useState('');
+const [interestRate4, setInterestRate4] = useState('');
+const [totalCapitalAndInterest4, setTotalCapitalAndInterest4] = useState('');
+const [numberOfPeriods4, setNumberOfPeriods4] = useState(null);
 
+const calculateNumberOfPeriods4 = () => {
+  const initialCapitalValueX4 = parseFloat(initialCapitalX4);
+  const initialCapitalValue4 = parseFloat(initialCapital4);
+  const interestRateValue4 = parseFloat(interestRate4);
+  const totalCapitalAndInterestValue4 = parseInt(totalCapitalAndInterest4) / 100;
+
+  if (!isNaN(initialCapitalValueX4) && !isNaN(initialCapitalValue4) && !isNaN(interestRateValue4) && !isNaN(totalCapitalAndInterestValue4)) {
+    const n = (initialCapitalValueX4+initialCapitalValue4*((Math.pow(1+totalCapitalAndInterestValue4,interestRateValue4)-1)/totalCapitalAndInterestValue4))/(Math.pow(1+totalCapitalAndInterestValue4,interestRateValue4))
+    setNumberOfPeriods4(n);
+  } else {
+    setNumberOfPeriods4(null);
+  }
+};
+
+  const clearInputs4 = () => {
+    setInitialCapitalX4('');
+    setInitialCapital4('');
+    setInterestRate4('');
+    setTotalCapitalAndInterest4('');
+    setNumberOfPeriods4(null);
+  };
   return (
     <div>
 
@@ -226,6 +251,44 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
           </div>
         </div>
 
+
+        <div className="recentOrders">
+          <div className="cardHeader">
+            <h2>IV. Tính số vốn ban dầun</h2>
+            <a href="#" className="btn" onClick={clearInputs4}>
+              Clear
+            </a>
+          </div>
+
+          <div>
+          <div className="rowInput">
+              <p>Nhập số tiền còn lại</p>
+              <input type="number" value={initialCapitalX4} onChange={(e) => setInitialCapitalX4(e.target.value)} />
+            </div>
+            <div className="rowInput">
+              <p>Nhập số tiền khách rút ra hàng tháng</p>
+              <input type="number" value={initialCapital4} onChange={(e) => setInitialCapital4(e.target.value)} />
+            </div>
+            <div className="rowInput">
+              <p>Nhập số kỳ hạn</p>
+              <input type="number" value={interestRate4} onChange={(e) => setInterestRate4(e.target.value)} />
+            </div>
+            <div className="rowInput">
+              <p>Nhập % lãi suất</p>
+              <input type="number" value={totalCapitalAndInterest4} onChange={(e) => setTotalCapitalAndInterest4(e.target.value)} />
+            </div>
+
+          </div>
+          <div className="result">
+          <div className="resultRow">
+          <p>Số vốn ban đầu là : </p>
+            {numberOfPeriods4 !== null && (
+              <p className="resultNumber">  {numberOfPeriods4.toFixed(2)}</p>
+            )}
+            </div>
+           <button onClick={calculateNumberOfPeriods4}>Tính</button>
+          </div>
+        </div>
 
 
       </div>
