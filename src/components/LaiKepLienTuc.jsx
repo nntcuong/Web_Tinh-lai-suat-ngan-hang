@@ -68,17 +68,18 @@ const LaiKepLienTuc = (props) => {
 
   const calculateNumberOfPeriods4 = () => {
     const initialCapitalValue4 = parseFloat(initialCapital4);
-    const interestRateValue3=4 = parseFloat(interestRate4);
-    const totalCapitalAndInterestValue3=4 = parseInt(totalCapitalAndInterest4)/100;
+    const interestRateValue4 = parseFloat(interestRate4);
+    const totalCapitalAndInterestValue4 = parseInt(totalCapitalAndInterest4);
+  
+    if (!isNaN(initialCapitalValue4) && !isNaN(interestRateValue4) && !isNaN(totalCapitalAndInterestValue4)) {
+      const periods = (1 / totalCapitalAndInterestValue4) * (Math.log(initialCapitalValue4 / interestRateValue4) / Math.log(Math.E));
 
-    if (!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
-      const periods = (1/totalCapitalAndInterestValue3)*(Math.log(initialCapitalValue3/interestRateValue3)/Math.log(2.71828))
-      const rounded_n=Math.round(periods);
-      setNumberOfPeriods3(rounded_n);
+      setNumberOfPeriods4(periods);
     } else {
-      setNumberOfPeriods3(null);
+      setNumberOfPeriods4(null);
     }
   };
+  
   const clearInputs = () => {
     setInitialCapital('');
     setInterestRate('');
