@@ -64,17 +64,19 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
     setTotalCapitalAndInterest3('');
     setNumberOfPeriods3(null);
   };
+  const [initialCapitalX3, setInitialCapitalX3] = useState('');
   const [initialCapital3, setInitialCapital3] = useState('');
   const [interestRate3, setInterestRate3] = useState('');
   const [totalCapitalAndInterest3, setTotalCapitalAndInterest3] = useState('');
   const [numberOfPeriods3, setNumberOfPeriods3] = useState(null);
 
   const calculateNumberOfPeriods3 = () => {
+    const initialCapitalValueX3 = parseFloat(initialCapitalX3);
     const initialCapitalValue3 = parseFloat(initialCapital3);
     const interestRateValue3 = parseFloat(interestRate3);
     const totalCapitalAndInterestValue3 = parseInt(totalCapitalAndInterest3);
 
-    if (!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
+    if (!isNaN(initialCapitalValueX3) &&!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
       const q=initialCapitalValue3/(initialCapitalValue3-interestRateValue3*totalCapitalAndInterestValue3/100);
       const p=1+totalCapitalAndInterestValue3/100;
       const n =Math.log(q) / Math.log(p); 
@@ -195,6 +197,10 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
           </div>
 
           <div>
+          <div className="rowInput">
+              <p>Nhập số tiền còn lại</p>
+              <input type="number" value={initialCapitalX3} onChange={(e) => setInitialCapitalX3(e.target.value)} />
+            </div>
             <div className="rowInput">
               <p>Nhập số tiền khách rút ra hàng tháng</p>
               <input type="number" value={initialCapital3} onChange={(e) => setInitialCapital3(e.target.value)} />
