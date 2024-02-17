@@ -15,13 +15,19 @@ const TienGuiHangThang =(props)=>{
     const totalCapitalAndInterestValue = parseFloat(totalCapitalAndInterest);
 
     if (!isNaN(initialCapitalValue) && !isNaN(interestRateValue) && !isNaN(totalCapitalAndInterestValue)) {
-      const periods = Math.log((totalCapitalAndInterestValue * interestRateValue / initialCapitalValue* (1 + interestRateValue)) + 1) / Math.log(1 + interestRateValue);
+      const periods = (initialCapitalValue/interestRateValue)*(1+interestRateValue)*(Math.pow(1+interestRateValue,totalCapitalAndInterestValue)-1)
       setNumberOfPeriods(periods);
     } else {
       setNumberOfPeriods(null);
     }
   };
 
+  const clearInputs = () => {
+    setInitialCapital('');
+    setInterestRate('');
+    setTotalCapitalAndInterest('');
+    setNumberOfPeriods(null);
+  };
 
   const [initialCapital2, setInitialCapital2] = useState('');
   const [interestRate2, setInterestRate2] = useState('');
@@ -34,33 +40,19 @@ const TienGuiHangThang =(props)=>{
     const totalCapitalAndInterestValue2 = parseFloat(totalCapitalAndInterest2);
 
     if (!isNaN(initialCapitalValue2) && !isNaN(interestRateValue2) && !isNaN(totalCapitalAndInterestValue2)) {
-      const periods = (initialCapitalValue2 / interestRateValue2) * ((((1 + interestRateValue2) ** totalCapitalAndInterestValue2) - 1) * (1 + interestRateValue2));
+      const periods = (initialCapitalValue2*interestRateValue2)/((1+interestRateValue2)*(Math.pow(1+interestRateValue2,totalCapitalAndInterestValue2)-1));
       setNumberOfPeriods2(periods);
     } else {
       setNumberOfPeriods2(null);
     }
   };
-
-  const [initialCapital3, setInitialCapital3] = useState('');
-  const [interestRate3, setInterestRate3] = useState('');
-  const [totalCapitalAndInterest3, setTotalCapitalAndInterest3] = useState('');
-  const [numberOfPeriods3, setNumberOfPeriods3] = useState(null);
-
-  const calculateNumberOfPeriods3 = () => {
-    const initialCapitalValue3 = parseFloat(initialCapital3);
-    const interestRateValue3 = parseFloat(interestRate3)/100;
-    const totalCapitalAndInterestValue3 = parseInt(totalCapitalAndInterest3);
-
-    if (!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
-      let S = 0;
-      for (let i = 1; i <= totalCapitalAndInterestValue3; i++) {
-        S += (initialCapitalValue3 / interestRateValue3) * ((((1 + interestRateValue3) ** i) - 1) * (1 + interestRateValue3));
-      }
-      setNumberOfPeriods3(S);
-    } else {
-      setNumberOfPeriods3(null);
-    }
+  const clearInputs2 = () => {
+    setInitialCapital2('');
+    setInterestRate2('');
+    setTotalCapitalAndInterest2('');
+    setNumberOfPeriods2(null);
   };
+
 
   const [initialCapital4, setInitialCapital4] = useState('');
   const [interestRate4, setInterestRate4] = useState('');
@@ -69,15 +61,21 @@ const TienGuiHangThang =(props)=>{
 
   const calculateNumberOfPeriods4 = () => {
     const initialCapitalValue4 = parseFloat(initialCapital4);
-    const interestRateValue4 = parseFloat(interestRate4);
+    const interestRateValue4 = parseFloat(interestRate4)/100;
     const totalCapitalAndInterestValue4 = parseFloat(totalCapitalAndInterest4);
 
     if (!isNaN(initialCapitalValue4) && !isNaN(interestRateValue4) && !isNaN(totalCapitalAndInterestValue4)) {
-      const periods4 =totalCapitalAndInterestValue4 * interestRateValue4 / ((1 + interestRateValue4) * ((1 + interestRateValue4) ** initialCapitalValue4 - 1))
+      const periods4 =Math.log(1+interestRateValue4)/Math.log();
       setNumberOfPeriods4(periods4);
     } else {
       setNumberOfPeriods4(null);
     }
+  };
+  const clearInputs4 = () => {
+    setInitialCapital4('');
+    setInterestRate4('');
+    setTotalCapitalAndInterest4('');
+    setNumberOfPeriods4(null);
   };
   return (
     <div>
@@ -106,7 +104,7 @@ const TienGuiHangThang =(props)=>{
         <div className="recentOrders">
           <div className="cardHeader">
             <h2>I. Tính tổng tiền cả vốn và lãi</h2>
-            <a href="#" className="btn">
+            <a href="#" className="btn" onClick={clearInputs}>
               Clear
             </a>
           </div>
@@ -140,15 +138,15 @@ const TienGuiHangThang =(props)=>{
         {/* ================= New Customers ================ */}
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>II. Tính tổng</h2>
-            <a href="#" className="btn">
+            <h2>II. Tính số tiền gửi hàng tháng</h2>
+            <a href="#" className="btn" onClick={clearInputs2}>
               Clear
             </a>
           </div>
 
           <div>
             <div className="rowInput">
-              <p>Nhập số vốn ban đầu</p>
+              <p>Nhập số tiền vốn và lãi</p>
               <input type="number" value={initialCapital2} onChange={(e) => setInitialCapital2(e.target.value)} />
             </div>
             <div className="rowInput">
@@ -172,51 +170,18 @@ const TienGuiHangThang =(props)=>{
           </div>
         </div>
 
+
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>III. Tổng tiền từng kỳ hạn</h2>
-            <a href="#" className="btn">
+            <h2>III. Tính số kỳ hạn</h2>
+            <a href="#" className="btn" onClick={clearInputs4}>
               Clear
             </a>
           </div>
 
           <div>
             <div className="rowInput">
-              <p>Nhập số vốn ban đầu</p>
-              <input type="number" value={initialCapital3} onChange={(e) => setInitialCapital3(e.target.value)} />
-            </div>
-            <div className="rowInput">
-              <p>Nhập số % lãi suất</p>
-              <input type="number" value={interestRate3} onChange={(e) => setInterestRate3(e.target.value)} />
-            </div>
-            <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
-              <input type="number" value={totalCapitalAndInterest3} onChange={(e) => setTotalCapitalAndInterest3(e.target.value)} />
-            </div>
-
-          </div>
-          <div className="result">
-          <div className="resultRow">
-          <p>Tổng tiền từng kỳ hạn là : </p>
-            {numberOfPeriods3 !== null && (
-              <p className="resultNumber">  {numberOfPeriods3.toFixed(2)}</p>
-            )}
-            </div>
-           <button onClick={calculateNumberOfPeriods3}>Tính</button>
-          </div>
-        </div>
-
-        <div className="recentOrders">
-          <div className="cardHeader">
-            <h2>IV. Tính gốc</h2>
-            <a href="#" className="btn">
-              Clear
-            </a>
-          </div>
-
-          <div>
-            <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <p>Nhập tổng tiền cả vốn và lãi</p>
               <input type="number" value={initialCapital4} onChange={(e) => setInitialCapital4(e.target.value)} />
             </div>
             <div className="rowInput">
@@ -224,7 +189,7 @@ const TienGuiHangThang =(props)=>{
               <input type="number" value={interestRate4} onChange={(e) => setInterestRate4(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập tổng vốn và lãi</p>
+              <p>Nhập số tiền gửi hàng tháng</p>
               <input type="number" value={totalCapitalAndInterest4} onChange={(e) => setTotalCapitalAndInterest4(e.target.value)} />
             </div>
 
