@@ -16,7 +16,7 @@ const VayVonTraGop = (props) => {
     const totalCapitalAndInterestValue = parseFloat(totalCapitalAndInterest);
     const XValue = parseFloat(X);
     if (!isNaN(XValue) &&!isNaN(initialCapitalValue) && !isNaN(interestRateValue) && !isNaN(totalCapitalAndInterestValue)) {
-      const periods = (initialCapitalValue*((1+interestRateValue)**totalCapitalAndInterestValue)*interestRateValue)/(((1+interestRateValue)**totalCapitalAndInterestValue)-1)
+      const periods =initialCapitalValue*Math.pow((1+interestRateValue),totalCapitalAndInterestValue)-XValue*((Math.pow(1+interestRateValue,totalCapitalAndInterestValue )-1)/interestRateValue)
       setNumberOfPeriods(periods);
     } else {
       setNumberOfPeriods(null);
