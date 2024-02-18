@@ -254,7 +254,7 @@ const calculateNumberOfPeriods4 = () => {
 
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>IV. Tính số vốn ban dầun</h2>
+            <h2>IV. Tính số vốn ban đầu</h2>
             <a href="#" className="btn" onClick={clearInputs4}>
               Clear
             </a>
