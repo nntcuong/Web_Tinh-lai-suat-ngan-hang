@@ -7,14 +7,15 @@ const VayVonTraGop = (props) => {
   const [initialCapital, setInitialCapital] = useState('');
   const [interestRate, setInterestRate] = useState('');
   const [totalCapitalAndInterest, setTotalCapitalAndInterest] = useState('');
+  const [X, setX] = useState('');
   const [numberOfPeriods, setNumberOfPeriods] = useState(null);
 
   const calculateNumberOfPeriods = () => {
     const initialCapitalValue = parseFloat(initialCapital);
     const interestRateValue = parseFloat(interestRate)/100;
     const totalCapitalAndInterestValue = parseFloat(totalCapitalAndInterest);
-
-    if (!isNaN(initialCapitalValue) && !isNaN(interestRateValue) && !isNaN(totalCapitalAndInterestValue)) {
+    const XValue = parseFloat(X);
+    if (!isNaN(XValue) &&!isNaN(initialCapitalValue) && !isNaN(interestRateValue) && !isNaN(totalCapitalAndInterestValue)) {
       const periods = (initialCapitalValue*((1+interestRateValue)**totalCapitalAndInterestValue)*interestRateValue)/(((1+interestRateValue)**totalCapitalAndInterestValue)-1)
       setNumberOfPeriods(periods);
     } else {
@@ -80,7 +81,7 @@ const VayVonTraGop = (props) => {
       <div className="details">
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>I. Tính số tiền cả vốn và lãi </h2>
+            <h2>I. Tính số tiền còn nợ </h2>
             <a href="#" className="btn" onClick={clearInputs}>
               Clear
             </a>
@@ -100,6 +101,10 @@ const VayVonTraGop = (props) => {
               <input type="number" value={totalCapitalAndInterest} onChange={(e) => setTotalCapitalAndInterest(e.target.value)} />
             </div>
 
+            <div className="rowInput">
+              <p>Nhập số tiền trả góp/ tháng</p>
+              <input type="number" value={X} onChange={(e) => setX(e.target.value)} />
+            </div>
           </div>
           <div className="result">
           <div className="resultRow">
@@ -115,7 +120,7 @@ const VayVonTraGop = (props) => {
         {/* ================= New Customers ================ */}
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>II. Tính số tiền phải trả ở kỳ cuối</h2>
+            <h2>II. Tính số vay</h2>
             <a href="#" className="btn" onClick={clearInputs2}>
               Clear
             </a>
