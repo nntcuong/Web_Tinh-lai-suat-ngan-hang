@@ -65,7 +65,7 @@ const TienGuiHangThang =(props)=>{
     const totalCapitalAndInterestValue4 = parseFloat(totalCapitalAndInterest4);
 
     if (!isNaN(initialCapitalValue4) && !isNaN(interestRateValue4) && !isNaN(totalCapitalAndInterestValue4)) {
-      const periods4 =Math.log(1+interestRateValue4)/Math.log();
+      const periods4 =Math.log(1+(initialCapitalValue4*interestRateValue4/(totalCapitalAndInterestValue4*(1+interestRateValue4))))/Math.log(1+interestRateValue4);
       setNumberOfPeriods4(periods4);
     } else {
       setNumberOfPeriods4(null);
