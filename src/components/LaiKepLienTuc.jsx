@@ -15,7 +15,7 @@ const LaiKepLienTuc = (props) => {
     const totalCapitalAndInterestValue = parseFloat(totalCapitalAndInterest)/100;
 
     if (!isNaN(initialCapitalValue) && !isNaN(interestRateValue) && !isNaN(totalCapitalAndInterestValue)) {
-      const n = initialCapitalValue*(Math.pow(2.71828,(interestRateValue*totalCapitalAndInterestValue)))
+      const n = initialCapitalValue*(Math.pow(2.7182818285,(interestRateValue*totalCapitalAndInterestValue)))
     
       setNumberOfPeriods(n);
     } else {
@@ -35,7 +35,7 @@ const LaiKepLienTuc = (props) => {
     const totalCapitalAndInterestValue2 = parseFloat(totalCapitalAndInterest2);
 
     if (!isNaN(initialCapitalValue2) && !isNaN(interestRateValue2) && !isNaN(totalCapitalAndInterestValue2)) {
-      const periods = initialCapitalValue2/(Math.pow(2.71828,interestRateValue2*totalCapitalAndInterestValue2))
+      const periods = initialCapitalValue2/(Math.pow(2.7182818285,interestRateValue2*totalCapitalAndInterestValue2))
       setNumberOfPeriods2(periods);
     } else {
       setNumberOfPeriods2(null);
@@ -50,10 +50,10 @@ const LaiKepLienTuc = (props) => {
   const calculateNumberOfPeriods3 = () => {
     const initialCapitalValue3 = parseFloat(initialCapital3);
     const interestRateValue3 = parseFloat(interestRate3);
-    const totalCapitalAndInterestValue3 = parseInt(totalCapitalAndInterest3)/100;
+    const totalCapitalAndInterestValue3 = parseFloat(totalCapitalAndInterest3)/100;
 
     if (!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
-      const periods = (1/totalCapitalAndInterestValue3)*(Math.log(initialCapitalValue3/interestRateValue3)/Math.log(2.71828))
+      const periods = (1/totalCapitalAndInterestValue3)*(Math.log(initialCapitalValue3/interestRateValue3)/Math.log(2.7182818285))
   
       setNumberOfPeriods3(periods);
     } else {

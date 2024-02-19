@@ -59,6 +59,7 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
     }
   };
   const clearInputs3 = () => {
+    setInitialCapitalX3('');
     setInitialCapital3('');
     setInterestRate3('');
     setTotalCapitalAndInterest3('');
@@ -74,12 +75,13 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
     const initialCapitalValueX3 = parseFloat(initialCapitalX3);
     const initialCapitalValue3 = parseFloat(initialCapital3);
     const interestRateValue3 = parseFloat(interestRate3);
-    const totalCapitalAndInterestValue3 = parseInt(totalCapitalAndInterest3)/100;
+    const totalCapitalAndInterestValue3 = parseFloat(totalCapitalAndInterest3)/100;
 
     if (!isNaN(initialCapitalValueX3) &&!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
-      const n=Math.log((initialCapitalValueX3*totalCapitalAndInterestValue3-initialCapitalValue3)/(interestRateValue3*totalCapitalAndInterestValue3-initialCapitalValue3))/Math.log(1+totalCapitalAndInterestValue3);
-    
-      setNumberOfPeriods3(n);
+      const absoluteValue = Math.abs((initialCapitalValueX3 * totalCapitalAndInterestValue3 - initialCapitalValue3) / (interestRateValue3 * totalCapitalAndInterestValue3 - initialCapitalValue3));
+      const m = Math.log(absoluteValue) / Math.log(1 + totalCapitalAndInterestValue3);
+   
+      setNumberOfPeriods3(m);
     } else {
       setNumberOfPeriods3(null);
     }
