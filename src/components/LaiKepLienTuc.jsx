@@ -54,8 +54,8 @@ const LaiKepLienTuc = (props) => {
 
     if (!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
       const periods = (1/totalCapitalAndInterestValue3)*(Math.log(initialCapitalValue3/interestRateValue3)/Math.log(2.71828))
-      const rounded_n=Math.round(periods);
-      setNumberOfPeriods3(rounded_n);
+  
+      setNumberOfPeriods3(periods);
     } else {
       setNumberOfPeriods3(null);
     }

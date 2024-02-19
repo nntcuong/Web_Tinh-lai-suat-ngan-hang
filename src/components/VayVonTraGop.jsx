@@ -55,10 +55,10 @@ const VayVonTraGop = (props) => {
     const totalCapitalAndInterestValue3 = parseFloat(totalCapitalAndInterest3)/100;
     const totalCapitalAndInterestValueMonth3 = parseFloat(totalCapitalAndInterestMonth3);
     if (!isNaN(initialCapitalValue3) && !isNaN(totalCapitalAndInterestValueMonth3) &&!isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
-      const periods =0
-      setNumberOfPeriods2(periods);
+      const periods =(totalCapitalAndInterestValue3*(totalCapitalAndInterestValueMonth3*Math.pow(1+totalCapitalAndInterestValue3,initialCapitalValue3)-interestRateValue3))/(Math.pow(1+totalCapitalAndInterestValue3,initialCapitalValue3)-1)
+      setNumberOfPeriods3(periods);
     } else {
-      setNumberOfPeriods2(null);
+      setNumberOfPeriods3(null);
     }
   };
   const clearInputs = () => {
@@ -80,7 +80,7 @@ const VayVonTraGop = (props) => {
     setInterestRate3('');
     setTotalCapitalAndInterest3('');
     setTotalCapitalAndInterestMonth3('');
-    setNumberOfPeriods2(null);
+    setNumberOfPeriods3(null);
   };
   return (
     <div>

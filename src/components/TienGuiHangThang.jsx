@@ -67,8 +67,7 @@ const TienGuiHangThang =(props)=>{
     if (!isNaN(initialCapitalValue4) && !isNaN(interestRateValue4) && !isNaN(totalCapitalAndInterestValue4)) {
       const periods4 =Math.log(1+(initialCapitalValue4*interestRateValue4/(totalCapitalAndInterestValue4*(1+interestRateValue4))))/Math.log(1+interestRateValue4);
      
-      const rounded_n=Math.round(periods4);
-      setNumberOfPeriods4(rounded_n);
+      setNumberOfPeriods4(periods4);
     } else {
       setNumberOfPeriods4(null);
     }
@@ -163,7 +162,7 @@ const TienGuiHangThang =(props)=>{
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Tổng vốn và lãi : </p>
+          <p>Số tiền gửi hàng tháng là : </p>
             {numberOfPeriods2 !== null && (
               <p className="resultNumber">  {numberOfPeriods2.toFixed(2)}</p>
             )}

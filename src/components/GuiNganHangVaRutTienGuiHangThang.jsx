@@ -79,8 +79,7 @@ const GuiNganHangVaRutTienGuiHangThang = (props) => {
     if (!isNaN(initialCapitalValueX3) &&!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
       const n=Math.log((initialCapitalValueX3*totalCapitalAndInterestValue3-initialCapitalValue3)/(interestRateValue3*totalCapitalAndInterestValue3-initialCapitalValue3))/Math.log(1+totalCapitalAndInterestValue3);
     
-      const roundedN = Math.round(n);
-      setNumberOfPeriods3(roundedN);
+      setNumberOfPeriods3(n);
     } else {
       setNumberOfPeriods3(null);
     }
@@ -146,7 +145,7 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số vốn ban dầu</p>
+              <p>Nhập số vốn ban đầu</p>
               <input type="number" value={initialCapital} onChange={(e) => setInitialCapital(e.target.value)} />
             </div>
             <div className="rowInput">

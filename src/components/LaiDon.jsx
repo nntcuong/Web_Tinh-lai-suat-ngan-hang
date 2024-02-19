@@ -129,7 +129,7 @@ const LaiDon = (props) => {
          {/* ================= New Customers ================ */}
          <div className="recentOrders">
           <div className="cardHeader">
-            <h2>II. Tính tổng</h2>
+            <h2>I. Tính tổng</h2>
             <a href="#" className="btn" onClick={clearInputs2}>
               Clear
             </a>
@@ -166,7 +166,7 @@ const LaiDon = (props) => {
 
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>IV. Tính gốc</h2>
+            <h2>II. Tính gốc</h2>
             <a href="#" className="btn" onClick={clearInputs4}>
               Clear
             </a>
@@ -202,7 +202,7 @@ const LaiDon = (props) => {
 
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>I. Tính kỳ hạn</h2>
+            <h2>III. Tính kỳ hạn</h2>
             <a href="#" className="btn" onClick={clearInputs}>
               Clear
             </a>
@@ -238,7 +238,7 @@ const LaiDon = (props) => {
 
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>III. Lãi suất</h2>
+            <h2>IV. Lãi suất</h2>
             <a href="#" className="btn" onClick={clearInputs3}>
               Clear
             </a>

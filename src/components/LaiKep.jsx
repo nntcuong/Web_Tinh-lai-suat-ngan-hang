@@ -20,8 +20,8 @@ const LaiKep = (props) => {
       const q = 1 + totalCapitalAndInterestValue / 100;
       const p = initialCapitalValue / interestRateValue;
         const n =Math.log(p) / Math.log(q); 
-       const rounded_n=Math.round(n);
-        setNumberOfPeriods(rounded_n);
+     
+        setNumberOfPeriods(n);
 
     } else {
       setNumberOfPeriods(null);
