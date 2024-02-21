@@ -112,7 +112,7 @@ const TienGuiHangThang =(props)=>{
 
           <div>
             <div className="rowInput">
-              <p>Nhập số tiền gửi hàng tháng</p>
+              <h2>Nhập số tiền gửi hàng tháng</h2>
               <input type="number" value={initialCapital} onChange={(e) => setInitialCapital(e.target.value)} />
             </div>
             <div className="rowInput">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
 import '../css/style.css';
-import  { useState } from 'react';
+import { useState } from 'react';
 const LaiDon = (props) => {
   const [initialCapital, setInitialCapital] = useState('');
   const [interestRate, setInterestRate] = useState('');
@@ -34,7 +34,7 @@ const LaiDon = (props) => {
     const totalCapitalAndInterestValue2 = parseFloat(totalCapitalAndInterest2);
 
     if (!isNaN(initialCapitalValue2) && !isNaN(interestRateValue2) && !isNaN(totalCapitalAndInterestValue2)) {
-      const periods = initialCapital2 * (1 + totalCapitalAndInterest2 * interestRate2/100)
+      const periods = initialCapital2 * (1 + totalCapitalAndInterest2 * interestRate2 / 100)
       setNumberOfPeriods2(periods);
     } else {
       setNumberOfPeriods2(null);
@@ -52,7 +52,7 @@ const LaiDon = (props) => {
     const totalCapitalAndInterestValue3 = parseInt(totalCapitalAndInterest3);
 
     if (!isNaN(initialCapitalValue3) && !isNaN(interestRateValue3) && !isNaN(totalCapitalAndInterestValue3)) {
-      const periods = (initialCapitalValue3-interestRateValue3)/(interestRateValue3*totalCapitalAndInterestValue3)
+      const periods = (initialCapitalValue3 - interestRateValue3) / (interestRateValue3 * totalCapitalAndInterestValue3)
       setNumberOfPeriods3(periods);
     } else {
       setNumberOfPeriods3(null);
@@ -70,7 +70,7 @@ const LaiDon = (props) => {
     const totalCapitalAndInterestValue4 = parseFloat(totalCapitalAndInterest4);
 
     if (!isNaN(initialCapitalValue4) && !isNaN(interestRateValue4) && !isNaN(totalCapitalAndInterestValue4)) {
-      const periods4 =totalCapitalAndInterestValue4 /( 1 + (initialCapitalValue4 *( interestRateValue4/100)))
+      const periods4 = totalCapitalAndInterestValue4 / (1 + (initialCapitalValue4 * (interestRateValue4 / 100)))
       setNumberOfPeriods4(periods4);
     } else {
       setNumberOfPeriods4(null);
@@ -126,10 +126,10 @@ const LaiDon = (props) => {
 
       {/* ================ Order Details List ================= */}
       <div className="details">
-         {/* ================= New Customers ================ */}
-         <div className="recentOrders">
+        {/* ================= New Customers ================ */}
+        <div className="recentOrders">
           <div className="cardHeader">
-            <h2>I. Tính tổng</h2>
+            <h2>I. TÍNH TỔNG</h2>
             <a href="#" className="btn" onClick={clearInputs2}>
               Clear
             </a>
@@ -137,27 +137,27 @@ const LaiDon = (props) => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số vốn ban đầu</p>
+              <h2>Nhập số vốn ban đầu</h2>
               <input type="number" value={initialCapital2} onChange={(e) => setInitialCapital2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số % lãi suất</p>
+              <h2>Nhập số % lãi suất</h2>
               <input type="number" value={interestRate2} onChange={(e) => setInterestRate2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <h2>Nhập số kỳ hạn</h2>
               <input type="number" value={totalCapitalAndInterest2} onChange={(e) => setTotalCapitalAndInterest2(e.target.value)} />
             </div>
-
           </div>
+
           <div className="result">
-          <div className="resultRow">
-          <p>Tính vốn và lãi : </p>
-            {numberOfPeriods2 !== null && (
-              <p className="resultNumber">  {numberOfPeriods2.toFixed(2)}</p>
-            )}
+            <div className="resultRow">
+              <h2 style={{fontWeight:'bold'}}>Tính vốn và lãi : </h2>
+              {numberOfPeriods2 !== null && (
+                <h2 className="resultNumber" style={{fontWeight:'bold'}}>  {numberOfPeriods2.toFixed(2)}</h2>
+              )}
             </div>
-           <button onClick={calculateNumberOfPeriods2}>Tính</button>
+            <button onClick={calculateNumberOfPeriods2}>Tính</button>
           </div>
         </div>
 
@@ -188,13 +188,13 @@ const LaiDon = (props) => {
 
           </div>
           <div className="result">
-          <div className="resultRow">
-          <p>Số tiền vốn là : </p>
-            {numberOfPeriods4!== null && (
-              <p className="resultNumber">  {numberOfPeriods4.toFixed(2)}</p>
-            )}
+            <div className="resultRow">
+              <p>Số tiền vốn là : </p>
+              {numberOfPeriods4 !== null && (
+                <p className="resultNumber">  {numberOfPeriods4.toFixed(2)}</p>
+              )}
             </div>
-           <button onClick={calculateNumberOfPeriods4}>Tính</button>
+            <button onClick={calculateNumberOfPeriods4}>Tính</button>
           </div>
         </div>
 
@@ -224,17 +224,17 @@ const LaiDon = (props) => {
 
           </div>
           <div className="result">
-          <div className="resultRow">
-          <p>Số kỳ hạn là : </p>
-            {numberOfPeriods !== null && (
-              <p className="resultNumber">  {numberOfPeriods.toFixed(2)}</p>
-            )}
+            <div className="resultRow">
+              <p>Số kỳ hạn là : </p>
+              {numberOfPeriods !== null && (
+                <p className="resultNumber">  {numberOfPeriods.toFixed(2)}</p>
+              )}
             </div>
-           <button onClick={calculateNumberOfPeriods}>Tính</button>
+            <button onClick={calculateNumberOfPeriods}>Tính</button>
           </div>
         </div>
 
-     
+
 
         <div className="recentOrders">
           <div className="cardHeader">
@@ -260,13 +260,13 @@ const LaiDon = (props) => {
 
           </div>
           <div className="result">
-          <div className="resultRow">
-          <p>Lãi suất là : </p>
-            {numberOfPeriods3 !== null && (
-              <p className="resultNumber">  {numberOfPeriods3.toFixed(2)}</p>
-            )}
+            <div className="resultRow">
+              <p>Lãi suất là : </p>
+              {numberOfPeriods3 !== null && (
+                <p className="resultNumber">  {numberOfPeriods3.toFixed(2)}</p>
+              )}
             </div>
-           <button onClick={calculateNumberOfPeriods3}>Tính</button>
+            <button onClick={calculateNumberOfPeriods3}>Tính</button>
           </div>
         </div>
 

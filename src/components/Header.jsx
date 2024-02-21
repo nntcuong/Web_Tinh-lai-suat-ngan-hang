@@ -10,48 +10,48 @@ function Header() {
         <li>
           <Link to="/" className='nav-link'>
             
-            <span className="title_head">LÃI SUẤT NGÂN HÀNG</span>
+            <span style={{ fontWeight: 'bold', fontSize: '2.5em',marginTop:'25px' }} >LÃI SUẤT NGÂN HÀNG</span>
           </Link>
         </li>
         <li>
           <Link to="/LaiDon" className='nav-link'>
             <span className="title">
-              1. Lãi đơn
+              1. LÃI ĐƠN
             </span>
           </Link>
         </li>
         <li>
           <Link to="/LaiKep" className='nav-link'>
             <span className="title">
-              2 .Lãi kép
+              2. LÃI KÉP
             </span>
           </Link>
         </li>
         <li>
           <Link to="/TienGuiHangThang" className='nav-link'>
             <span className="title">
-              3. Tiền gửi hàng tháng
+              3. TIỀN GỬI HÀNG THÁNG
             </span>
           </Link>
         </li>
         <li>
           <Link to="/GuiNganHangVaRutTienGuiHangThang" className='nav-link'>
             <span className="title">
-              4. Gửi ngân hàng và rút tiền gửi hàng tháng
+              4. GỬI NGÂN HÀNG VÀ RÚT TIỀN GỬI HÀNG THÁNG
             </span>
           </Link>
         </li>
         <li>
           <Link to="/VayVonTraGop" className='nav-link'>
             <span className="title">
-              5. Vay vốn trả góp
+              5. VAY VỐN TRẢ GÓP
             </span>
           </Link>
         </li>
         <li>
           <Link to="/LaiKepLienTuc" className='nav-link'>
             <span className="title">
-              6 .Lãi kép liên tục
+              6. LÃI KÉP LIÊN TỤC
             </span>
           </Link>
         </li>

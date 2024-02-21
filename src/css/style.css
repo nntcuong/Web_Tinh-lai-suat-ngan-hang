@@ -46,12 +46,14 @@ body {
   height: 30px;
   margin-right: 50px;
   width: 600px;
+  margin-bottom: 10px;
 }
 .result{
   margin-top: 100px;
 }
 .resultNumber {
-  margin-left: 8px; /* Adjust the values as needed for your desired spacing */
+  margin-left: 8px;
+  font-weight: 'bold'; /* Adjust the values as needed for your desired spacing */
 }
 .result p{
   font-family: "Ubuntu", sans-serif;
@@ -174,14 +176,14 @@ a {
   position: relative;
   display: block;
   padding: 0 10px;
-  height: 30px;
-  line-height: 60px;
+  height: 80px;
+  line-height: 600px;
   text-align: start;
   white-space: nowrap;
   font-weight: 'bold';
-  font-size: 1.3rem;
+  font-size: 1.62rem;
   color: rgb(243, 247, 249);
-  font-size: 27px;
+  font-size: 375px;
 }
 
 /* --------- curve outside ---------- */
