@@ -145,26 +145,26 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số tiền vay</p>
+              <h2>Nhập số tiền vay</h2>
               <input type="number" value={initialCapital} onChange={(e) => setInitialCapital(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số % lãi suất</p>
+              <h2>Nhập số % lãi suất</h2>
               <input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <h2>Nhập số kỳ hạn</h2>
               <input type="number" value={totalCapitalAndInterest} onChange={(e) => setTotalCapitalAndInterest(e.target.value)} />
             </div>
 
             <div className="rowInput">
-              <p>Nhập số tiền trả góp/ tháng</p>
+              <h2>Nhập số tiền trả góp/ tháng</h2>
               <input type="number" value={X} onChange={(e) => setX(e.target.value)} />
             </div>
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số tiền còn nợ là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số tiền còn nợ là : </h2>
             {numberOfPeriods !== null && (
               <p className="resultNumber">  {numberOfPeriods.toFixed(2)}</p>
             )}
@@ -184,26 +184,26 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
             <div className="rowInput">
-              <p>NHẬP SỐ KỲ HẠN</p>
+              <h2>NHẬP SỐ KỲ HẠN</h2>
               <input type="number" value={initialCapital2} onChange={(e) => setInitialCapital2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền còn nợ</p>
+              <h2>Nhập số tiền còn nợ</h2>
               <input type="number" value={interestRate2} onChange={(e) => setInterestRate2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số % lãi suất</p>
+              <h2>Nhập số % lãi suất</h2>
               <input type="number" value={totalCapitalAndInterest2} onChange={(e) => setTotalCapitalAndInterest2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập tiền trả góp/tháng</p>
+              <h2>Nhập tiền trả góp/tháng</h2>
               <input type="number" value={totalCapitalAndInterestMonth2} onChange={(e) => setTotalCapitalAndInterestMonth2(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số tiền vay là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số tiền vay là : </h2>
             {numberOfPeriods2 !== null && (
               <p className="resultNumber">{numberOfPeriods2.toFixed(2)}</p>
             )}
@@ -222,26 +222,26 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <h2>Nhập số kỳ hạn</h2>
               <input type="number" value={initialCapital3} onChange={(e) => setInitialCapital3(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền còn nợ</p>
+              <h2>Nhập số tiền còn nợ</h2>
               <input type="number" value={interestRate3} onChange={(e) => setInterestRate3(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số % lãi suất</p>
+              <h2>Nhập số % lãi suất</h2>
               <input type="number" value={totalCapitalAndInterest3} onChange={(e) => setTotalCapitalAndInterest3(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền vay</p>
+              <h2>Nhập số tiền vay</h2>
               <input type="number" value={totalCapitalAndInterestMonth3} onChange={(e) => setTotalCapitalAndInterestMonth3(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số tiền trả góp/tháng là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số tiền trả góp/tháng là : </h2>
             {numberOfPeriods3 !== null && (
               <p className="resultNumber">{numberOfPeriods3.toFixed(2)}</p>
             )}
@@ -261,26 +261,26 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số tiền trả góp/tháng</p>
+              <h2>Nhập số tiền trả góp/tháng</h2>
               <input type="number" value={initialCapital4} onChange={(e) => setInitialCapital4(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền còn nợ</p>
+              <h2>Nhập số tiền còn nợ</h2>
               <input type="number" value={interestRate4} onChange={(e) => setInterestRate4(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số % lãi suất</p>
+              <h2>Nhập số % lãi suất</h2>
               <input type="number" value={totalCapitalAndInterest4} onChange={(e) => setTotalCapitalAndInterest4(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền vay</p>
+              <h2>Nhập số tiền vay</h2>
               <input type="number" value={totalCapitalAndInterestMonth4} onChange={(e) => setTotalCapitalAndInterestMonth4(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số kỳ hạn là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số kỳ hạn là : </h2>
             {numberOfPeriods4 !== null && (
               <p className="resultNumber">{numberOfPeriods4.toFixed(2)}</p>
             )}

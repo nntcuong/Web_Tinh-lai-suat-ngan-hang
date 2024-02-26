@@ -103,7 +103,7 @@ const LaiKepLienTuc = (props) => {
 
       <div className="recentCustomers2">
         <div >
-          <p className="cardHeaderText"> Thông tin khách hàng</p>
+          <p className="cardHeaderText"> THÔNG TIN KHÁCH HÀNG</p>
         </div>
         <div className="rowFlex">
           <div className="marginLeft">
@@ -124,7 +124,7 @@ const LaiKepLienTuc = (props) => {
       <div className="details">
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>I. Tính số tiền cả vốn và lãi</h2>
+            <h2>I. TÍNH SỐ TIỀN CẢ VỐN VÀ LÃI</h2>
             <a href="#" className="btn" onClick={clearInputs}>
               Clear
             </a>
@@ -132,22 +132,22 @@ const LaiKepLienTuc = (props) => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số tiền gửi ngân hàng (A）</p>
+              <h2>Nhập số tiền gửi ngân hàng (A）</h2>
               <input type="number" value={initialCapital} onChange={(e) => setInitialCapital(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <h2>Nhập số kỳ hạn</h2>
               <input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập lãi suất</p>
+              <h2>Nhập lãi suất</h2>
               <input type="number" value={totalCapitalAndInterest} onChange={(e) => setTotalCapitalAndInterest(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số tiền cả vốn và lãi là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số tiền cả vốn và lãi là : </h2>
             {numberOfPeriods !== null && (
               <p className="resultNumber">  {numberOfPeriods.toFixed(2)}</p>
             )}
@@ -159,7 +159,7 @@ const LaiKepLienTuc = (props) => {
         {/* ================= New Customers ================ */}
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>II. Tính số tiền gửi ngân hàng</h2>
+            <h2>II. TÍNH SỐ TIỀN GỬI NGÂN HÀNG</h2>
             <a href="#" className="btn" onClick={clearInputs2}>
               Clear
             </a>
@@ -167,22 +167,22 @@ const LaiKepLienTuc = (props) => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số tiền cả vốn và lãi</p>
+              <h2>Nhập số tiền cả vốn và lãi</h2>
               <input type="number" value={initialCapital2} onChange={(e) => setInitialCapital2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập lãi suất</p>
+              <h2>Nhập lãi suất</h2>
               <input type="number" value={interestRate2} onChange={(e) => setInterestRate2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <h2 >Nhập số kỳ hạn</h2>
               <input type="number" value={totalCapitalAndInterest2} onChange={(e) => setTotalCapitalAndInterest2(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số tiền gửi ngân hàng là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số tiền gửi ngân hàng là : </h2>
             {numberOfPeriods2 !== null && (
               <p className="resultNumber">  {numberOfPeriods2.toFixed(2)}</p>
             )}
@@ -193,7 +193,7 @@ const LaiKepLienTuc = (props) => {
 
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>III. Tính số kỳ hạn</h2>
+            <h2>III. TÍNH SỐ KỲ HẠN</h2>
             <a href="#" className="btn" onClick={clearInputs3}>
               Clear
             </a>
@@ -201,22 +201,22 @@ const LaiKepLienTuc = (props) => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số tiền cả vốn và lãi</p>
+              <h2>Nhập số tiền cả vốn và lãi</h2>
               <input type="number" value={initialCapital3} onChange={(e) => setInitialCapital3(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền gửi ngân hàng</p>
+              <h2>Nhập số tiền gửi ngân hàng</h2>
               <input type="number" value={interestRate3} onChange={(e) => setInterestRate3(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập lãi suất</p>
+              <h2>Nhập lãi suất</h2>
               <input type="number" value={totalCapitalAndInterest3} onChange={(e) => setTotalCapitalAndInterest3(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số kỳ hạn là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số kỳ hạn là : </h2>
             {numberOfPeriods3 !== null && (
               <p className="resultNumber">  {numberOfPeriods3.toFixed(2)}</p>
             )}
@@ -227,7 +227,7 @@ const LaiKepLienTuc = (props) => {
 
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>IV. Tính lãi suất</h2>
+            <h2>IV. TÍNH LÃI SUẤT</h2>
             <a href="#" className="btn" onClick={clearInputs3}>
               Clear
             </a>
@@ -235,22 +235,22 @@ const LaiKepLienTuc = (props) => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số tiền cả vốn và lãi</p>
+              <h2>Nhập số tiền cả vốn và lãi</h2>
               <input type="number" value={initialCapital4} onChange={(e) => setInitialCapital4(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền gửi ngân hàng</p>
+              <h2>Nhập số tiền gửi ngân hàng</h2>
               <input type="number" value={interestRate4} onChange={(e) => setInterestRate4(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <h2>Nhập số kỳ hạn</h2>
               <input type="number" value={totalCapitalAndInterest4} onChange={(e) => setTotalCapitalAndInterest4(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Lãi suất là : </p>
+          <h2 style={{fontWeight:'bold'}}>Lãi suất là : </h2>
             {numberOfPeriods4 !== null && (
               <p className="resultNumber">  {numberOfPeriods4.toFixed(2)}</p>
             )}
