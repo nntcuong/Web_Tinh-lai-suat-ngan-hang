@@ -115,10 +115,9 @@ const calculateNumberOfPeriods4 = () => {
   };
   return (
     <div>
-
       <div className="recentCustomers2">
         <div >
-          <p className="cardHeaderText"> Thông tin khách hàng</p>
+          <p className="cardHeaderText"> THÔNG TIN KHÁCH HÀNG</p>
         </div>
         <div className="rowFlex">
           <div className="marginLeft">
@@ -139,7 +138,7 @@ const calculateNumberOfPeriods4 = () => {
       <div className="details">
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>I. Tính số tiền còn lại</h2>
+            <h2>I. TÍNH SỐ TIỀN CÒN LẠI</h2>
             <a href="#" className="btn" onClick={clearInputs}>
               Clear
             </a>
@@ -147,26 +146,26 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số vốn ban đầu</p>
+              <h2>Nhập số vốn ban đầu</h2>
               <input type="number" value={initialCapital} onChange={(e) => setInitialCapital(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền rút</p>
+              <h2>Nhập số tiền rút</h2>
               <input type="number" value={initialCapitalCap} onChange={(e) => setInitialCapitalCap(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập lãi suất</p>
+              <h2>Nhập lãi suất</h2>
               <input type="number" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập kỳ hạn</p>
+              <h2>Nhập kỳ hạn</h2>
               <input type="number" value={totalCapitalAndInterest} onChange={(e) => setTotalCapitalAndInterest(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số tiền còn lại là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số tiền còn lại là : </h2>
             {numberOfPeriods !== null && (
               <p className="resultNumber">  {numberOfPeriods.toFixed(2)}</p>
             )}
@@ -178,7 +177,7 @@ const calculateNumberOfPeriods4 = () => {
         {/* ================= New Customers ================ */}
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>II. Tính số tiền rút</h2>
+            <h2>II. TÍNH SỐ TIỀN RÚT</h2>
             <a href="#" className="btn" onClick={clearInputs2}>
               Clear
             </a>
@@ -186,26 +185,26 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số vốn ban đầu</p>
+              <h2>Nhập số vốn ban đầu</h2>
               <input type="number" value={initialCapital2} onChange={(e) => setInitialCapital2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập lãi suất</p>
+              <h2>Nhập lãi suất</h2>
               <input type="number" value={interestRate2} onChange={(e) => setInterestRate2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <h2>Nhập số kỳ hạn</h2>
               <input type="number" value={totalCapitalAndInterest2} onChange={(e) => setTotalCapitalAndInterest2(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền còn lại</p>
+              <h2>Nhập số tiền còn lại</h2>
               <input type="number" value={totalCapitalAndInterestX2} onChange={(e) => setTotalCapitalAndInterestX2(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số tiền rút là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số tiền rút là : </h2>
             {numberOfPeriods2 !== null && (
               <p className="resultNumber">  {numberOfPeriods2.toFixed(2)}</p>
             )}
@@ -216,7 +215,7 @@ const calculateNumberOfPeriods4 = () => {
 
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>III. Tính số kỳ hạn</h2>
+            <h2>III. TÍNH SỐ KỲ HẠN</h2>
             <a href="#" className="btn" onClick={clearInputs3}>
               Clear
             </a>
@@ -224,26 +223,26 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
           <div className="rowInput">
-              <p>Nhập số tiền còn lại</p>
+              <h2>Nhập số tiền còn lại</h2>
               <input type="number" value={initialCapitalX3} onChange={(e) => setInitialCapitalX3(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền khách rút ra hàng tháng</p>
+              <h2>Nhập số tiền khách rút ra hàng tháng</h2>
               <input type="number" value={initialCapital3} onChange={(e) => setInitialCapital3(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền ban đầu</p>
+              <h2>Nhập số tiền ban đầu</h2>
               <input type="number" value={interestRate3} onChange={(e) => setInterestRate3(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập % lãi suất</p>
+              <h2>Nhập % lãi suất</h2>
               <input type="number" value={totalCapitalAndInterest3} onChange={(e) => setTotalCapitalAndInterest3(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số kỳ hạn là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số kỳ hạn là : </h2>
             {numberOfPeriods3 !== null && (
               <p className="resultNumber">  {numberOfPeriods3.toFixed(2)}</p>
             )}
@@ -255,7 +254,7 @@ const calculateNumberOfPeriods4 = () => {
 
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>IV. Tính số vốn ban đầu</h2>
+            <h2>IV. TÍNH SỐ VỐN BAN ĐẦU</h2>
             <a href="#" className="btn" onClick={clearInputs4}>
               Clear
             </a>
@@ -263,26 +262,26 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
           <div className="rowInput">
-              <p>Nhập số tiền còn lại</p>
+              <h2>Nhập số tiền còn lại</h2>
               <input type="number" value={initialCapitalX4} onChange={(e) => setInitialCapitalX4(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số tiền khách rút ra hàng tháng</p>
+              <h2>Nhập số tiền khách rút ra hàng tháng</h2>
               <input type="number" value={initialCapital4} onChange={(e) => setInitialCapital4(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <h2>Nhập số kỳ hạn</h2>
               <input type="number" value={interestRate4} onChange={(e) => setInterestRate4(e.target.value)} />
             </div>
             <div className="rowInput">
-              <p>Nhập % lãi suất</p>
+              <h2>Nhập % lãi suất</h2>
               <input type="number" value={totalCapitalAndInterest4} onChange={(e) => setTotalCapitalAndInterest4(e.target.value)} />
             </div>
 
           </div>
           <div className="result">
           <div className="resultRow">
-          <p>Số vốn ban đầu là : </p>
+          <h2 style={{fontWeight:'bold'}}>Số vốn ban đầu là : </h2>
             {numberOfPeriods4 !== null && (
               <p className="resultNumber">  {numberOfPeriods4.toFixed(2)}</p>
             )}

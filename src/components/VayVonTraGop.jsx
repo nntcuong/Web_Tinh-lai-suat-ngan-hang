@@ -116,7 +116,7 @@ const calculateNumberOfPeriods4 = () => {
 
       <div className="recentCustomers2">
         <div >
-          <p className="cardHeaderText"> Thông tin khách hàng</p>
+          <p className="cardHeaderText"> THÔNG TIN KHÁCH HÀNG</p>
         </div>
         <div className="rowFlex">
           <div className="marginLeft">
@@ -137,7 +137,7 @@ const calculateNumberOfPeriods4 = () => {
       <div className="details">
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>I. Tính số tiền còn nợ </h2>
+            <h2>I. TÍNH SỐ TIỀN CÒN NỢ </h2>
             <a href="#" className="btn" onClick={clearInputs}>
               Clear
             </a>
@@ -176,7 +176,7 @@ const calculateNumberOfPeriods4 = () => {
         {/* ================= New Customers ================ */}
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>II. Tính số tiền vay</h2>
+            <h2>II. TÍNH SỐ TIỀN VAY</h2>
             <a href="#" className="btn" onClick={clearInputs2}>
               Clear
             </a>
@@ -184,7 +184,7 @@ const calculateNumberOfPeriods4 = () => {
 
           <div>
             <div className="rowInput">
-              <p>Nhập số kỳ hạn</p>
+              <p>NHẬP SỐ KỲ HẠN</p>
               <input type="number" value={initialCapital2} onChange={(e) => setInitialCapital2(e.target.value)} />
             </div>
             <div className="rowInput">
@@ -214,7 +214,7 @@ const calculateNumberOfPeriods4 = () => {
  {/* ================= New Customers ================ */}
  <div className="recentOrders">
           <div className="cardHeader">
-            <h2>III. Tính số tiền trả góp/tháng</h2>
+            <h2>III. TÍNH SỐ TIỀN TRẢ GÓP/THÁNG</h2>
             <a href="#" className="btn" onClick={clearInputs3}>
               Clear
             </a>
@@ -253,7 +253,7 @@ const calculateNumberOfPeriods4 = () => {
 
         <div className="recentOrders">
           <div className="cardHeader">
-            <h2>IV. Tính kỳ hạn</h2>
+            <h2>IV. TÍNH KỲ HẠN</h2>
             <a href="#" className="btn" onClick={clearInputs4}>
               Clear
             </a>
